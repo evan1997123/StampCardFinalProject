@@ -11,5 +11,10 @@
 
   <body>
     <%= yield %>
+      <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name"><%= link_to 'Home page', root_path %></li>
+    </ul>
+    </nav>
   </body>
 </html>

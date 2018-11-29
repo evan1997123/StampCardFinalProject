@@ -1,0 +1,30 @@
+<h3>User</h3>
+<p>Name: <%= @user.name if @user.name %></p>
+<p>Email: <%= @user.email if @user.email %></p>
+<%= @user.stampcard.id %> <!-- so a @user.stampcard exists -->
+<%= Stamp.where(stampcard_id: @user.stampcard.id).map {|s| s.name} %>
+<br/>Stamps: nil? <%= @stamps.nil?%>
+<br/>AchievementNames: nil? <%=@names.nil?%>
+<p> Stamp Card</p>
+<% if (@user.stampcard == nil)%>
+	<%= button_to "Create new Stampcard", new_path, :class => "button medium", :method => :get %>
+<% else %>
+	<img src="https://media.giphy.com/media/IqojY0rgVWfOE/giphy.gif">
+	<% @names.each do |currentCategory| %>
+		<% check = @stamps.find_by(category: currentCategory)%>
+		<p>Check for <%= currentCategory%> stamp </p>
+		<% if(check.nil?) %>
+			You don't have this stamp!
+		<% else %>
+			You have this stamp: <img src="<%=check.image%>">
+		<br/>
+		<% end %>
+	<% end %>
+	<!-- for loop that checks the @stamps for all that has the stamp_id of Stamps.all
+	then, if it has it, img src = @stamps.specific-one.image.
+	always have a break(or a next line)
+	Then it would iterate through and print only the good ones, reason for the alwys break is if we 
+	wanted to increament maybe pixel by 30px everytime, to signify the circles of the stampcard-->
+
+	<!-- Display the stampcard -->
+<% end %>
