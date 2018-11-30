@@ -3,6 +3,12 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @names = Array.new()
+    Achievement.all.each do |a| 
+ 		currentAchievementCategory = a.name
+ 		@names.push(currentAchievementCategory)
+ 	end 
+ 	@names.uniq!
   end
 
   def show

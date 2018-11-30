@@ -1,8 +1,24 @@
 This will display all the users.
+<br/>
+<% if(@users.nil?)%>
+<p>You have no users!</p>
+<% end %>
 <% @users.each do |user| %>
-            
+     <% stamps = Stamp.where(stampcard_id: user.stampcard.id)%>
      Name: <%= user.name %> <br />
      Email: <%= user.email %> <br />
-     <!-- Display the stamp card -->
-           
-<% end %>
+     <p> This is user: </p> <%=user.id%> 
+
+     <p> <%= user.name %>'s Stamp Card</p>
+			<img src="https://media.giphy.com/media/IqojY0rgVWfOE/giphy.gif">
+			<% @names.each do |currentCategory| %>
+				<% check = stamps.find_by(category: currentCategory)%>
+				<p>Check for <%= currentCategory%> stamp </p>
+				<% if(check.nil?) %>
+					You don't have this stamp!
+				<% else %>
+					You have this stamp: <img src="<%=check.image%>">
+				<br/>
+				<% end %>
+		<% end %>
+	<% end %>     
