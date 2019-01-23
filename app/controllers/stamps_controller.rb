@@ -10,7 +10,10 @@ class StampsController < ApplicationController
   end
   def create
   	@stamp = Stamp.new(stamp_params)
-	@stamp.update(stampcard: current_user.stampcard)	
+    @current = current_user
+	@stamp.update(stampcard: current.stampcard)
+  @current.stampcard.update(total:  @current.stampcard.total + 1)	
+  @current.save
 	@stamp.save
 	redirect_to user_path(id: current_user)
 

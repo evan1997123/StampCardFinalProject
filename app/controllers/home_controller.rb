@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-  	@variable = 2
+  	@variable = User.all.size
   	@user = current_user
 
 

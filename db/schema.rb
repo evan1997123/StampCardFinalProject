@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_065008) do
+ActiveRecord::Schema.define(version: 2019_01_23_044054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "achievements", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "stampcards", force: :cascade do |t|
     t.bigint "user_id"
@@ -36,9 +29,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_065008) do
     t.bigint "stampcard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "achievement_id"
     t.string "image"
-    t.index ["achievement_id"], name: "index_stamps_on_achievement_id"
+    t.string "EventTitle"
     t.index ["stampcard_id"], name: "index_stamps_on_stampcard_id"
   end
 
@@ -57,6 +49,5 @@ ActiveRecord::Schema.define(version: 2018_11_29_065008) do
   end
 
   add_foreign_key "stampcards", "users"
-  add_foreign_key "stamps", "achievements"
   add_foreign_key "stamps", "stampcards"
 end
