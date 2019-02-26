@@ -1,8 +1,4 @@
 This is the total users: <%= @variable %>
-STAMPCARD NAME IS THE DESCRIPTIOn
-Stamps have staampcard id, achievement ID, description, and then a category. Then each achievemnt is simply a picture for that stamp.
-
-TRYING TO VIEW ALL STAMPCARDS WITH A USER WHO HASN"T CREATED A STAMPCARD BREAKS, SO ONLY DISPLAY THOSE WITH STAMPCARDS 
 
 <% if user_signed_in? %>
   <li><%= link_to 'View your StampCard', user_path(id: current_user) %></li>

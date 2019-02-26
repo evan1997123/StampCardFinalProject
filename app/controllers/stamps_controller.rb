@@ -16,11 +16,11 @@ class StampsController < ApplicationController
   def create
   	@stamp = Stamp.new(stamp_params)
     @current = current_user
-  	@stamp.update(stampcard: @current.stampcard)
-    @current.stampcard.update(total:  @current.stampcard.total + 1)	
+  	@stamp.update(stampcard: @current.stampcard)	
     @stamp.update(image: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Circlek.png/200px-Circlek.png")
+  	@stamp.save
+    @current.stampcard.update(total: @current.stampcard.stamps.count)
     @current.save
-  	@stamp.save!
   	redirect_to user_path(id: current_user)
   end
 

@@ -7,6 +7,7 @@
 <% else %>
 	<img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.15752-9/44583354_1962459730486599_2648647413081833472_n.png?_nc_cat=101&_nc_ht=scontent-lax3-1.xx&oh=e873ef0bb3f5cc255c00e7bce4c87f27&oe=5D24AA45" style="width:550px;height:320px;">
      <br>
+     Total Stamps: <%= @user.stampcard.total%> <br>
      You have these stamps<br>
      <% @user.stampcard.stamps.each do |stamp| %>
      You have stamp name: <%= stamp.name%> 
