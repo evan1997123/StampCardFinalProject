@@ -1,0 +1,13 @@
+
+<% if(@user.stampcard == nil || @user.stampcard.total >=10) %>
+	You must have a stampcard to create a stamp.
+
+	<% else %>
+	Create your stampcard
+		<%= simple_form_for @stamp, method: "post", url: stamps_path do |f| %>
+		<!--add option to choose a background? -->
+			<%= f.input :name %>
+			<%= f.input :category %>
+		  <%= f.button :submit%>
+		 <% end %>
+<% end %> 
