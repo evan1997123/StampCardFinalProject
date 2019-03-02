@@ -10,7 +10,7 @@
      Total Stamps: <%= @user.stampcard.total%> <br>
      You have these stamps<br>
      <% @user.stampcard.stamps.each do |stamp| %>
-     You have stamp name: <%= stamp.name%> 
+     You have stamp name: <%= stamp.name%> <br>
      That stamp is part of category: <%= stamp.category%>
      <img src= "<%=stamp.image%>" style="width:50px;height:50px;">
      <br>
