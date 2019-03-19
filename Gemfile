@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.12'
 
 gem 'devise'
 gem 'simple_form'
+gem 'rails_admin', '~> 1.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
