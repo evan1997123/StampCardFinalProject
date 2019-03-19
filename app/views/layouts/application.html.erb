@@ -31,6 +31,9 @@
             <a class="nav-link" href= <%=user_path(id: current_user)%> > View Stampcard</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href=<%= users_path%>>View All Stampcards</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href=<%= new_stamp_path%>>Create Stamp</a>
         </li>
         </ul>
@@ -57,6 +60,9 @@
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href=<%= root_path%> >Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href=<%= users_path%>>View All Stampcards</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
