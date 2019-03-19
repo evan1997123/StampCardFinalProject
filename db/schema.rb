@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2019_01_23_044054) do
   end
 
   create_table "stamps", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.bigint "stampcard_id"
+    t.string "name" #
+    t.string "category"#
+    t.bigint "stampcard_id" # rails admin 
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
