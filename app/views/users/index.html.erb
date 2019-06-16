@@ -7,8 +7,8 @@ This will display all the users. Hi
 			<% if(user.stampcard == nil)%>
      Name: <%= user.name %> <br />
      Email: <%= user.email %> <br />
-     <p> This is user: </p> <%=user.id%>
-     They do not have a stampcard created
+     <p> This is user: <%=user.id%></p> 
+     They do not have a stampcard created <br/><br/>
 
 		<% else %>
      <% stamps = Stamp.where(stampcard_id: user.stampcard.id)%>
@@ -18,14 +18,15 @@ This will display all the users. Hi
 
      <p> <%= user.name %>'s Stamp Card</p>
 			<img src="https://scontent-lax3-1.xx.fbcdn.net/v/t1.15752-9/44583354_1962459730486599_2648647413081833472_n.png?_nc_cat=101&_nc_ht=scontent-lax3-1.xx&oh=e873ef0bb3f5cc255c00e7bce4c87f27&oe=5D24AA45" style="width:550px;height:320px;">
-     <br>
-     You have these stamps<br>
+     <br/>
+     <%= user.name %> has these stamps<br/>
      <% user.stampcard.stamps.each do |stamp| %>
-     You have stamp name: <%= stamp.name%> 
+     Stamp name: <%= stamp.name%> <br/>
      That stamp is part of category: <%= stamp.category%>
      <img src= "<%=stamp.image%>" style="width:50px;height:50px;">
-     <br>
+     <br/>
      <% end %>
+     <br/>
      <% end %>
 
 <% end %>     
